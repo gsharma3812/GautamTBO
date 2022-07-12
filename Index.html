@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="style.css" />
+
+   
+<title>Question Paper</title>
+
+<img src="logo1.jpg" alt="TBO.com" style="width:210px;height:80px;">
+
+
+<canvas id="canvas" width="150" height="150"
+style="background-color:#FFFFFF", right>
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+
+
+
+
+
+
+
+<p><b><a href="Extranetonline.html">Home</a> &nbsp;&nbsp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&emsp;
+<a href="Index.html">Promotion Team Weekly Test</a> &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;<a href="Index1.html">Stop sale Team Weekly Test </a></b></p>   
+
+<hr>
+
+
+
+
+</head>
+
+<style>
+
+body {
+
+  background-color: lightblue;
+
+}
+
+</style>
+
+</Body>
+
+
+
+<P> <hr>
+   
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading"> Week 1 Promotion Team July Weekly Test - Best of Luck !! </h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                             
+<fieldset>
+       
+<div class="form-group">
+                                          <b>  Your Full Name: </b> <input type="text" name="Name" class="form-control" placeholder="Your Full Name*" value="" required=""/>
+                                        </div> <br><br>
+<div class="form-group">
+                                            <b>Employee Id: </b> <input type="text" name="employeeid" class="form-control" placeholder="Your Empolyee Id *" value="" required=""/>
+                                        </div> <br>
+
+<div class="form-group">
+                                            <b>Date: </b> <input type="date" name="date" class="form-control" placeholder="Your Empolyee Id *" value="" required=""/>
+                                        </div> <br><br>
+
+
+
+<div class="form-group">
+    Question 1, Eid Supplement has loaded 8-14 July and 200, and you received the new update the supplement 100 - 9-10 July, so would update it on system? <input type="text" name="question1" class="form-control" placeholder="Your Answer *" value="" required=""/>
+     </div> <br>
+
+ 
+<div class="form-group">
+ Question 2, If inventory is slow working then what are the steps you will do?  <input type="text" name="question2" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+<div class="form-group">
+ Question 3, Before Booking a Calendar what you will do and to whom you will inform ? <input type="text" name="question3" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+  Question 4, What is the latest update on Taj Exotica Resort And Spa The Palm Dubai (RO Rates)?  <input type="text" name="question4" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+ Question 5, if promotion is not applicable to an extra bed and Event supplements  then how would load this offer  <input type="text" name="question5" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+
+<div class="form-group">
+  Question 6, Contract has loaded with 2 nights MLOS, and a new promotions receive with 1 night, so would you load the offer?  <input type="text" name="question6" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+Question 7, If the inventory rate is 875 and new promotions have been received with 886, how would you load this offer? <input type="text" name="question7" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+ Question 8, If existing promotions 298 and 387, you received a new promotion with 458, how would you load this offer?  <input type="text" name="question8" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+<div class="form-group">
+Question 9, How to load Weekend promotions (Fri - Sat), in Extrent the Weekend days set as Thus-Sat? <input type="text" name="question9" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+<div class="form-group">
+ Question 10, There is no rate loaded for RO in inventory, and new promotions are received on RO and BB basis, how would you load this?  <input type="text" name="question10" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+  Question 11, Offer and Inventory on 1-day release -  A New request - Zero day releae, so how you would update this.  <input type="text" name="question11" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+Question 12, AED 250 offer rate and this offer is combined with 10% discount on Weekday on 3 nights MLOS, how this offer will load on the system.  <input type="text" name="question12" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+
+<div class="form-group">
+Question 13, If any update on the <b>"Detail tab"</b> or <b>"Remark tab"</b>, then what we do that CRM id,  <input type="text" name="question13" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+Question 14, Only reservation email has changed, what you will do and what you will for that ticket?
+ <input type="text" name="question14" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+Question 15, If hotel Name change from AAAAA Dubai to BBBBB Dubai, what are the steps you will follow? <input type="text" name="question15" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+                                       
+<div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Submit" />
+                                        </div>
+                                   
+</form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+         
+         
+<script>
+              const scriptURL = 'https://script.google.com/macros/s/AKfycbyZqafJjTjSPN6dH88a0NK8dedLFMX_84JpdkWKIX-6qCDUQozgOcZlX00xc9CB7P7l/exec'
+            const form = document.forms['google-sheet']
+         
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Updating your Weekly Test. We will let you know your Result Soon....Prepare by Gautam"))
+                .catch(error => console.error('Error!', error.message))
+            })
+         
+</script>
+
+       
+</fieldset>
+
+<img src="logo1.jpg" alt="TBO.com" style="width:230px;height:80px;">
+
+</p>
+
+</html>

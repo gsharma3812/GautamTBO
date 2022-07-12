@@ -1,0 +1,186 @@
+body {
+
+font-family: Verdana;
+background-image: url("tbobg.jpg");
+height: 400vh;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover; 
+background-attachment: fixed;
+
+margin: 3;
+padding: 0;
+	
+	
+}
+
+a:hover {text-decoration: underline;
+	background-color: #00FA9A;
+
+
+}
+
+
+
+a {
+  color: #FF7F50;
+
+}
+
+P1, tr, th {
+  color: black;
+ text-align:center;
+
+}
+
+p {
+
+	 color: #FF7F50;
+ 	text-align:center;
+	font-family: sans-serif;
+
+
+}
+
+p2 {
+text-align:center;
+
+}
+
+h2 {
+text-align:center;
+font-family: sans-serif;
+color: #48D1CC;
+
+
+}
+
+h2:hover {text-decoration: underline;
+	background-color: #F0FFFF;
+
+}
+
+h1, table {
+text-align:center;
+font-family: sans-serif;
+color: #FF7F50;
+
+}
+
+
+
+
+
+    .clock {
+
+      width: 40%;
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFA500;
+    }
+
+    .time {
+      font-size: 50px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .date-time {
+      font-size: 15px;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 768px) {
+      .time {
+        font-size: 50px;
+      }
+    }
+
+table, th, td {
+  border: 1px solid black;
+
+      justify-content: center;
+      align-table: center;
+}
+
+canvas {
+
+ text-align:center;
+ animation-duration: 8s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;	
+background-color:#FFFFFF;text-align:center"
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 300px;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+
+
+#myDIV {
+  background-color: white;
+  border: 0px solid black;
+  animation: mymove 9s infinite;
+}
+
+@keyframes mymove {
+  25% {padding: 40px;}
+}
+
+#round { 
+
+width: 30px;
+  height: 30px;
+  background-color: red;
+  position: relative;
+  animation-name: moving;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  
+}
+
+@keyframes moving {
+  0%   {background-color:red; left:0px; top:0px;}
+  10%  {background-color:blue; left:200px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:orange; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+ 80% {background-color:yellow; left:0px; top:0px;} 
+ 100% {background-color:orange; left:0px; top:0px;}
+
+}
+
+#round1 { 
+
+width: 30px;
+  height: 30px;
+  background-color: red;
+  position: relative;
+  animation-name: moving;
+  animation-duration: .2s;
+  animation-iteration-count: infinite;
+ animation-direction: alternate-reverse;  
+  
+}
+
+@keyframes moving {
+  0%   {background-color:red; left:0px; top:0px;}
+  10%  {background-color:blue; left:200px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+ 80% {background-color:yellow; left:0px; top:0px;} 
+ 100% {background-color:red; left:0px; top:0px;}
+
+}

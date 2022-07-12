@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extranet Delay</title>
+<img src="logo1.jpg" alt="TBO.com" style="width:200px;height:80px;">
+<link rel="stylesheet" href="delay.css" />
+
+
+<canvas id="canvas" width="150" height="150"
+style="background-color:#FFFFFF", right>
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+   
+
+
+</head>
+
+<!-- <pre>                                                             <img src="logo1.jpg" alt="TBO.com" style="width:450px;height:60px;"> </pre>  //-->
+
+
+<!--<style>
+
+body {
+
+  background-color: lightblue;
+
+}
+
+</style>//-->
+
+
+<p><b><a href="Extranetonline.html">Home</a> &nbsp;&nbsp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
+<a href="Index.html">Weekly Test</a> &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;<a href="Index1.html">Stop sale Team Weekly Test </a></b></p> <hr>
+
+<body>
+   
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                       <pre>  <h2  class="register-heading"> Extranet Downtime Management !! </h2></pre>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                             
+
+
+
+<fieldset><b>
+       
+<div class="form-group">
+                                            Your Full Name:  <input type="text" name="Name" class="form-control" placeholder="Your Full Name*" value="" required=""/>
+                                        </div> <br><br>
+<div class="form-group">
+                                            Employee Id:  <input type="text" name="employeeid" class="form-control" placeholder="Your Empolyee Id *" value="" required=""/>
+                                        </div> <br><br>
+<div class="form-group">
+                                            Extranet Slow Message/Remark:  <input type="text" name="extranetslow" class="form-control" placeholder=" *" value="" required=""/>
+                                        </div> <br>
+ 
+<div class="form-group">
+  Date: &emsp;&emsp;&emsp;&emsp;&emsp; <input type="date" name="date" class="form-control" placeholder="Your Answer *" value="" required=""/>
+  
+         &emsp;&emsp;    Time: &emsp;&emsp;&emsp;&emsp;&emsp; <input type="time" name="time" class="form-control" placeholder="Your Answer *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+                                           Facing issue since:  <input type="number" name="issuefacing" class="form-control" placeholder="in Minute *" value="" required=""/>
+                          </div> <br>
+
+<div class="form-group">
+                                            Any Additional Comments:  <input type="text" name="addcomments" class="form-control" placeholder="comment">
+                          </div> <br>
+
+                                       
+<div class="form-group">
+                                          <br> <br> <b><input type="submit" name="submit" class="btnSubmit btn-block" value="Submit" /></b>
+                                        </div>
+                                   
+</b></form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+         
+         
+<script>
+              const scriptURL = 'https://script.google.com/macros/s/AKfycbz353OdzxZC48Myx4gq37Wq2R6ACJWhvJ59Yh9JEsXh8rRJCEMslWSnW9-XzT-6-CXa/exec'
+            const form = document.forms['google-sheet']
+         
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Updating Extranet Downtime.! We will let you know once its fixed...Prepare by Gautam"))
+                .catch(error => console.error('Error!', error.message))
+            })
+         
+</script>
+
+       
+</fieldset>
+
+<!-- <pre> <img src="logo1.jpg" alt="TBO.com" style="width:230px;height:80px;">//-->
+
+</body>
+</html>

@@ -10,15 +10,12 @@
 
 <div id="round"> </div>
 
-
 <img src="logo1.jpg" alt="TBO.com" style="width:230px;height:80px;">
 <link rel="stylesheet" href="style.css" />
 <div>
-
-<a href="main.html"><i class="fa fa-sign-in" aria-hidden="true"></i><br>
-<hr>
 <p><a class="active" href="Extranetonline.html"><i class="fa fa-home"></i></a> </p>
-
+<p><a href="Extranetonline.html"><b> Home </b></a></p><p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 </div>
 
 <div> <canvas id="canvas" width="150" height="150"
@@ -118,15 +115,45 @@ function drawHand(ctx, pos, length, width) {
 
 
 <body>
+<script>
+
+function land(ref, target)
+{
+lowtarget=target.toLowerCase();
+if (lowtarget=="_self") {window.location=loc;}
+else {if (lowtarget=="_top") {top.location=loc;}
+else {if (lowtarget=="_blank") {window.open(loc);}
+else {if (lowtarget=="_parent") {parent.location=loc;}
+else {parent.frames[target].location=loc;};
+}}}
+}
+function jump(menu)
+{
+ref=menu.choice.options[menu.choice.selectedIndex].value;
+splitc=ref.lastIndexOf("*");
+target="";
+if (splitc!=-1)
+{loc=ref.substring(0,splitc);
+target=ref.substring(splitc+1,1000);}
+else {loc=ref; target="_self";};
+if (ref != "") {land(loc,target);}
+}
+
+
+
+</script>
+
+<form action="dummy" method="post"><select name="choice" size="1" onChange="jump(this.form)"><option value="">Menu</option><option value="http://gautamsolution.rf.gd/cal.html">Calculator</option><option value="http://www.google.com">Google</option><option value="">Test</option><option value="http://gautamsolution.rf.gd/Index.html">Promotion Team</option><option value="http://gautamsolution.rf.gd/Index1.html">Stop sale Team</option></select></form>
+
 </head>
 
-<h2><b> Home</b></h2>
+<p><a href="https://www.google.com/" target="_new">Google</a></p>
 
 <h2>Extranet Down Time Management</h2> 
 
 <p> <i class="fa-solid fa-camera-rotate fa-flip"></i></p>
 <p><a href="extranetdelay.html"> <b> Extranet Delay </b></a></p>
-<p><a href="main.html" target="_top">New Verson</a></p>
+<p><a href="menu.html" target="_top">New Verson</a></p>
 
 <a href="main.html"><i class="fa fa-sign-in" aria-hidden="true"></i>
 
@@ -134,94 +161,87 @@ function drawHand(ctx, pos, length, width) {
 
 
 
-<br>
-<br>
+<div class="icon-bar">
+  <a class="active" href="main.html"><i class="fa fa-home"></i></a> 
+  <a href="main.html"><i class="fa fa-search"></i></a> 
+  <a href="#"><i class="fa fa-envelope"></i></a> 
+  <a href="#"><i class="fa fa-globe"></i></a>
+  <a href="#"><i class="fa fa-trash"></i></a> 
+
+
+</div>
+
+
+
 
 
 <table>
   <tr>
-    <th> Helpful Links </th>
+    <th> Useful Links </th>
     <th>Requests</th>
   </tr>
   
 <tr>
-    <td> Extanet</td>
-    <td> <a href="http://suppliers.tboholidays.com/Propertylist.aspx" target="_new">Here you Go</a> </td>
+    <td>Extanet</td>
+    <td> <a href="//http://suppliers.tboholidays.com/" target="_new">Here you Go</a> </td>
   </tr>
 
 <tr>
-    <td>  TBO Holidays </td>
+    <td> TBO Holidays </td>
     <td> <a href="https://www.tboholidays.com/" target="_new">Here you Go</a> </td>
   </tr>
 
 <tr>
-    <td>  Update in Stop sale .</td>
+    <td>. Update in Stop sale .</td>
     <td> <a href="https://tboholidays1-my.sharepoint.com/:x:/g/personal/gautam_sharma_tbo_com/EYG_jATJeKlPnd4S9OTFNYEBqpUmiC_ozTW1Hd6gzj31Dg?rtime=vIKBcNRj2kg&isSPOFile=1&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMjA3MDMwMDgxNCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D%22" target="_new">Here you Go</a> </td>
   </tr>
 <tr>
-    <td>  Updates for Promotions Team .</td>
-    <td> <a href="http://suppliers.tboholidays.com/Propertylist.aspx" target="_new">Here you Go</a> </td>
+    <td>. Updates for Promotions Team .</td>
+    <td> <a href="https://www.tboholidays.com/" target="_new">Here you Go</a> </td>
   </tr>
 
 <tr>
-    <td> Updates for Contract Team .</td>
+    <td>. Updates for Contract Team .</td>
     <td> <a href="https://www.tboholidays.com/" target="_new">Here you Go</a> </td>
   </tr>
 
 
 <tr>
-    <td> CRM Report Management</td>
+    <td>CRM Report Queue</td>
     <td> <a href="https://extranet.sdpondemand.manageengine.com/app/itdesk/CustomReportHandler.fl" target="_new">Here you Go</a> </td>
   </tr>
   <tr>
-    <td>  MEA Queue</td>
+    <td>MEA Queue</td>
     <td><a href="https://extranet.sdpondemand.manageengine.com/app/itdesk/ui/requests" target="_new">Click me</a></td>
   </tr>
 <tr>
-    <td>  Loading Extranet Errors File  .</td>
+    <td>. Loading Extranet Errors File  .</td>
     <td><a href="https://tboholidays1-my.sharepoint.com/:x:/g/personal/lokesh_kumar_tbo_com/Efx2kSMdIPhIn79Nssb5EV0BnelXYRIqxPxbLLwBY4ro4w?e=BKtXGt&CID=C32A5FCC-5797-4E26-A431-4795DC744201&wdLOR=cD621A7D3-090C-416B-96C1-5BDD98DBCF55"target="_new">Click me</a></td>
   </tr>
 
 
 <tr>
-    <td>  Update in Stop sale . </td>
+    <td>. LATAM Stop Sale Count . </td>
     <td><a href=https://tboholidays1-my.sharepoint.com/:x:/g/personal/gautam_sharma_tbo_com/EYG_jATJeKlPnd4S9OTFNYEBqpUmiC_ozTW1Hd6gzj31Dg?rtime=vIKBcNRj2kg&isSPOFile=1&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMjA3MDMwMDgxNCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_new">. Update Counts .</a></td>
   </tr>
-
-
-<tr>
-    <td> .     Stop sales Volume in Zero Production Productivity  .</td>
-    <td><a href=https://tboholidays1-my.sharepoint.com/:x:/g/personal/gautam_sharma_tbo_com/EYG_jATJeKlPnd4S9OTFNYEBqpUmiC_ozTW1Hd6gzj31Dg?rtime=vIKBcNRj2kg&isSPOFile=1&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMjA3MDMwMDgxNCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_new">. Update Counts .</a></td>
-  </tr>
-
 
 
 </table>
 
-<br><br>
-
 <h2>Productivity</h2>
-<ul> <p><a href="productivity.html" target="_top">Productivity</a></p><br>
+<ul> <p><a href="productivity.html" target="_top">Productivity</a></p>
 
 <h2>PROCESS KNOWLEDGE TEST (PKT)</h2>
 <p><a href="Index.html"><b>Promotions Team Weekly Test</b></a></p>
 <p><a href="Index1.html"><b>Stop sale Team Weekly Test</b></a></p>
 
-
-<p><a href="Index.html"><b>Process Knowledge Test (PKT) - Promotion Team </b></a></p>
-<p><a href="Index.html"><b>Process Knowledge Test (PKT) - Centralized Contracts Team </b></a></p>
-<p><a href="Index1.html"><b>Stop sale Team Weekly Test</b></a></p>
-<p><a href="iampkt.html"><b>Process Knowledge Test (PKT) - IAM Team</b></a></p>
-
 <br>
 <h2>Additional Help</h2>
-<p><a href="https://www.google.com/" target="_new">Google</a></p>
-
 <p><a href="cal.html">Calculator</a></p>
+<p><a href="main.html"><i class="fa fa-sign-in" aria-hidden="true"></i></p>
 <p><b><a href="countdown.html">Calculate Loading Time</a></b></p>
 <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
 
-<p><a href="main.html"><i class="fa fa-sign-in" aria-hidden="true"></i></p>
   
 
 
@@ -268,6 +288,34 @@ body {margin:0}
 
 
 <hr>
+<h2>Next updatations
+</h2>
+remove watch
+digital clock on top
+<br>
+
+remove managemnt
+<br>
+type in for promotion/contract/stop sale
+<br>
+final resolution - tast was it move to qc/query/pending/other reason
+<br>
+Extranet errors and internal errors for making test
+<br>
+additional help
+<br>
+indual level - monthly review points
+qulity score /pkt socre/ common errors/ month wise productiviy and quality
+<br>
+strength and weekness for members
+<br>
+persnol growth
+tracking just like weekly review meetings - progess/follow/tracking with dead line
+
+
+
+<hr><br>
+
 	
 </html>
 

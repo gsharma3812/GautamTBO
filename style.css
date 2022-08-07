@@ -14,8 +14,8 @@ padding: 0;
 	
 }
 
-a:hover {text-decoration: underline;
-	background-color: #00FA9A;
+a:hover {text-decoration: no-underline;
+	background-color: #E6E6FA;
 
 
 }
@@ -50,13 +50,13 @@ text-align:center;
 h2 {
 text-align:center;
 font-family: sans-serif;
-color: #48D1CC;
+color: #483D8B;
 
 
 }
 
-h2:hover {text-decoration: underline;
-	background-color: #F0FFFF;
+h2:hover {text-decoration: no-underline;
+	background-color: #00BFFF;
 
 }
 
@@ -77,27 +77,31 @@ color: #FF7F50;
       height: 20%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: right;
       align-items: center;
-      background-color: #FFA500;
+      background-color: #FFFFFF;
+	position: relative;
+  	left: 900px;
+  	border: 1px solid #73AD21;
     }
 
     .time {
       font-size: 50px;
       font-weight: bold;
-      color: #fff;
+      color: #000000;
     }
 
     .date-time {
       font-size: 15px;
-      color: #fff;
+      color: #000000;
     }
 
     @media screen and (max-width: 768px) {
       .time {
-        font-size: 50px;
+        font-size: 40px;
       }
     }
+
 
 table, th, td {
   border: 1px solid black;
@@ -106,13 +110,16 @@ table, th, td {
       align-table: center;
 }
 
+
+
+
 canvas {
 
  text-align:center;
  animation-duration: 8s;
     animation-name: slidein;
     animation-iteration-count: infinite;	
-background-color:#FFFFFF;text-align:center"
+background-color:#FFFFFF;text-align:center" 
 }
 
 @keyframes slidein {
@@ -170,7 +177,8 @@ width: 30px;
   animation-name: moving;
   animation-duration: .2s;
   animation-iteration-count: infinite;
- animation-direction: alternate-reverse;  
+ animation-direction: alternate-reverse; 
+-webkit-transition: width 0.4s ease-in-out; 
   
 }
 
